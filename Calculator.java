@@ -1,12 +1,27 @@
 public class Calculator{
-	private int result;
+	private float result;
 
-	public void add(int... params){
-		for(Integer param : params){
+	public void add(float... params){
+		for(Float param : params){
 			this.result +=param;
 		}
 	}
-	public int getResult(){
+	public void substract(float... params){
+		for(Float param : params){
+			this.result = params[0] - params[1];
+			}
+		}
+	public void divide(float... params){
+		for(Float param : params){
+			this.result = params[0] / params[1];
+			}
+		}
+	public void multiply(float... params){
+		for(Float param : params){
+			this.result = params[0] * params[1];
+			}
+		}
+	public float getResult(){
 		return this.result;
 	}
 	public void cleanResult(){
