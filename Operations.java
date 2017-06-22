@@ -5,69 +5,51 @@ import java.io.IOException;
 public class Operations{
 	Calculator calculator;
 	BufferedReader reader;
-	public void addOperation(){
-		calculator = new Calculator();
+	float a;
+	float b;
+
+	public void typing(){
 		reader = new BufferedReader(new InputStreamReader(System.in));
 		try{
 		System.out.println("Type first number");
-		float a = Float.parseFloat(reader.readLine());
+		a = Float.parseFloat(reader.readLine());
 		System.out.println("Type second number");
-		float b = Float.parseFloat(reader.readLine());
+		b = Float.parseFloat(reader.readLine());
+		}
+		catch(IOException e){
+		}
+	}
+	
+	public void addOperation(){
+		calculator = new Calculator();
+		typing();
 		calculator.add(a, b);
 		System.out.println("Result : " + calculator.getResult());
 		calculator.cleanResult();
-		}
-		catch(IOException e){
 		
-		}
 		}
 	public void substractOperation(){
 		calculator = new Calculator();
-		reader = new BufferedReader(new InputStreamReader(System.in));
-		try{
-			System.out.println("Type first number");
-			float a = Float.parseFloat(reader.readLine());
-			System.out.println("Type second number");
-			float b = Float.parseFloat(reader.readLine());
+			typing();
 			calculator.substract(a, b);
 			System.out.println("Result : " + calculator.getResult());
 			calculator.cleanResult();
 			}
-		catch(IOException e){
 			
-			}
-	}
 	public void divideOperation(){
 		calculator = new Calculator();
-		reader = new BufferedReader(new InputStreamReader(System.in));
-		try{
-			System.out.println("Type first number");
-			float a = Float.parseFloat(reader.readLine());
-			System.out.println("Type second number");
-			float b = Float.parseFloat(reader.readLine());
+			typing();
 			calculator.divide(a, b);
 			System.out.println("Result : " + calculator.getResult());
 			calculator.cleanResult();
 		}
-		catch(IOException e){
-			
-		}
-	}
 	public void multiplyOperation(){
 		calculator = new Calculator();
-		reader = new BufferedReader(new InputStreamReader(System.in));
-		try{
-			System.out.println("Type first number");
-			float a = Float.parseFloat(reader.readLine());
-			System.out.println("Type second number");
-			float b = Float.parseFloat(reader.readLine());
+			typing();
 			calculator.multiply(a, b);
 			System.out.println("Result : " + calculator.getResult());
 			calculator.cleanResult();
-		}
-		catch(IOException e){
-			
-		}
+	
 	}
 	
 }
